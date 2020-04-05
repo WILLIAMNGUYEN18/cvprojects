@@ -41,6 +41,26 @@
       "frameworks": {
         "netcoreapp2.1": {
           "dependencies": {
+            "AForge": {
+              "target": "Package",
+              "version": "[2.2.5, )"
+            },
+            "AForge.Imaging": {
+              "target": "Package",
+              "version": "[2.2.5, )"
+            },
+            "AForge.Math": {
+              "target": "Package",
+              "version": "[2.2.5, )"
+            },
+            "AForge.Video": {
+              "target": "Package",
+              "version": "[2.2.5, )"
+            },
+            "AForge.Vision": {
+              "target": "Package",
+              "version": "[2.2.5, )"
+            },
             "Accord.Video.FFMPEG.x64": {
               "target": "Package",
               "version": "[3.8.0, )"

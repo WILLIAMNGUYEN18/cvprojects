@@ -9,3 +9,12 @@ C:\valorantcv\valorantcv\valorantcv\obj\Debug\netcoreapp2.1\valorantcv.AssemblyI
 C:\valorantcv\valorantcv\valorantcv\obj\Debug\netcoreapp2.1\valorantcv.AssemblyInfo.cs
 C:\valorantcv\valorantcv\valorantcv\obj\Debug\netcoreapp2.1\valorantcv.dll
 C:\valorantcv\valorantcv\valorantcv\obj\Debug\netcoreapp2.1\valorantcv.pdb
+C:\valorantcv\valorantcv\valorantcv\bin\Debug\netcoreapp2.1\avcodec-57.dll
+C:\valorantcv\valorantcv\valorantcv\bin\Debug\netcoreapp2.1\avdevice-57.dll
+C:\valorantcv\valorantcv\valorantcv\bin\Debug\netcoreapp2.1\avfilter-6.dll
+C:\valorantcv\valorantcv\valorantcv\bin\Debug\netcoreapp2.1\avformat-57.dll
+C:\valorantcv\valorantcv\valorantcv\bin\Debug\netcoreapp2.1\avutil-55.dll
+C:\valorantcv\valorantcv\valorantcv\bin\Debug\netcoreapp2.1\postproc-54.dll
+C:\valorantcv\valorantcv\valorantcv\bin\Debug\netcoreapp2.1\swresample-2.dll
+C:\valorantcv\valorantcv\valorantcv\bin\Debug\netcoreapp2.1\swscale-4.dll
+C:\valorantcv\valorantcv\valorantcv\bin\Debug\netcoreapp2.1\Accord.dll.config
