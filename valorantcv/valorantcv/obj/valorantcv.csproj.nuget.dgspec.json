@@ -1,0 +1,67 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\valorantcv\\valorantcv\\valorantcv\\valorantcv.csproj": {}
+  },
+  "projects": {
+    "C:\\valorantcv\\valorantcv\\valorantcv\\valorantcv.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\valorantcv\\valorantcv\\valorantcv\\valorantcv.csproj",
+        "projectName": "valorantcv",
+        "projectPath": "C:\\valorantcv\\valorantcv\\valorantcv\\valorantcv.csproj",
+        "packagesPath": "C:\\Users\\Brilliance\\.nuget\\packages\\",
+        "outputPath": "C:\\valorantcv\\valorantcv\\valorantcv\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Brilliance\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Accord.Video.FFMPEG.x64": {
+              "target": "Package",
+              "version": "[3.8.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}
