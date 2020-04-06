@@ -1,109 +1,14 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "298b8fdb92cfc91415aecf1070c241449a5b08d6"
+    "signature": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
   },
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v2.1": {
       "valorantcv/1.0.0": {
-        "dependencies": {
-          "AForge": "2.2.5",
-          "AForge.Imaging": "2.2.5",
-          "AForge.Video": "2.2.5",
-          "AForge.Vision": "2.2.5",
-          "Accord.Video.FFMPEG.x64": "3.8.0",
-          "Newtonsoft.Json": "12.0.3"
-        },
         "runtime": {
           "valorantcv.dll": {}
-        }
-      },
-      "Accord/3.8.0": {
-        "runtime": {
-          "lib/netstandard2.0/Accord.dll": {
-            "assemblyVersion": "3.8.0.0",
-            "fileVersion": "3.8.0.6134"
-          }
-        }
-      },
-      "Accord.Video/3.8.0": {
-        "dependencies": {
-          "Accord": "3.8.0"
-        },
-        "runtime": {
-          "lib/netstandard2.0/Accord.Video.dll": {
-            "assemblyVersion": "3.8.0.0",
-            "fileVersion": "3.8.0.6134"
-          }
-        }
-      },
-      "Accord.Video.FFMPEG.x64/3.8.0": {
-        "dependencies": {
-          "Accord": "3.8.0",
-          "Accord.Video": "3.8.0"
-        }
-      },
-      "AForge/2.2.5": {
-        "runtime": {
-          "lib/AForge.dll": {
-            "assemblyVersion": "2.2.5.0",
-            "fileVersion": "2.2.5.0"
-          }
-        }
-      },
-      "AForge.Imaging/2.2.5": {
-        "dependencies": {
-          "AForge": "2.2.5",
-          "AForge.Math": "2.2.5"
-        },
-        "runtime": {
-          "lib/AForge.Imaging.dll": {
-            "assemblyVersion": "2.2.5.0",
-            "fileVersion": "2.2.5.0"
-          }
-        }
-      },
-      "AForge.Math/2.2.5": {
-        "dependencies": {
-          "AForge": "2.2.5"
-        },
-        "runtime": {
-          "lib/AForge.Math.dll": {
-            "assemblyVersion": "2.2.5.0",
-            "fileVersion": "2.2.5.0"
-          }
-        }
-      },
-      "AForge.Video/2.2.5": {
-        "dependencies": {
-          "AForge": "2.2.5"
-        },
-        "runtime": {
-          "lib/AForge.Video.dll": {
-            "assemblyVersion": "2.2.5.0",
-            "fileVersion": "2.2.5.0"
-          }
-        }
-      },
-      "AForge.Vision/2.2.5": {
-        "dependencies": {
-          "AForge": "2.2.5",
-          "AForge.Imaging": "2.2.5"
-        },
-        "runtime": {
-          "lib/AForge.Vision.dll": {
-            "assemblyVersion": "2.2.5.0",
-            "fileVersion": "2.2.5.0"
-          }
-        }
-      },
-      "Newtonsoft.Json/12.0.3": {
-        "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
-            "assemblyVersion": "12.0.0.0",
-            "fileVersion": "12.0.3.23909"
-          }
         }
       }
     }
@@ -113,69 +18,6 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
-    },
-    "Accord/3.8.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-7kJrB570dO5ELim+2KWQNozuvWO9/BuZfZspdFy36fcWPNF2CEccblLuILeUlI8QJYd2DlBy0bfK8BlCx/uayA==",
-      "path": "accord/3.8.0",
-      "hashPath": "accord.3.8.0.nupkg.sha512"
-    },
-    "Accord.Video/3.8.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-efsmrydC22ZEisWkukqAiCtv27qF0l5/9U1eCCTkbnc5EYYE6F2RSnsfWr8iTELXb3ZsLLGO+Sy+K0NXrHDv4A==",
-      "path": "accord.video/3.8.0",
-      "hashPath": "accord.video.3.8.0.nupkg.sha512"
-    },
-    "Accord.Video.FFMPEG.x64/3.8.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-eYHbjfn6AlYPjhaPBWy6Hyjnw5lbWzBQ43GzwsQQcAMgsYB6sK7kwh5yTHns4UycI2v0Y/I/WVXJdOcpaiK3Xw==",
-      "path": "accord.video.ffmpeg.x64/3.8.0",
-      "hashPath": "accord.video.ffmpeg.x64.3.8.0.nupkg.sha512"
-    },
-    "AForge/2.2.5": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-clkumhM9DggqIzEXAHgVLeWO4arG5YfoPr7J4jfjJx35AoeEIJSSm49J25bwp/9mXQYLwi7y1Wunc8qgYJsGxg==",
-      "path": "aforge/2.2.5",
-      "hashPath": "aforge.2.2.5.nupkg.sha512"
-    },
-    "AForge.Imaging/2.2.5": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-n8l7Zdsm89EFW9Uz4uCO3D428Gu4Q56YxixSMJPruen1c30R8R9Mm8AreTdoOi2XjN5id04JwFFlXYTk8pIIfw==",
-      "path": "aforge.imaging/2.2.5",
-      "hashPath": "aforge.imaging.2.2.5.nupkg.sha512"
-    },
-    "AForge.Math/2.2.5": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-pmT1WobVv13vMxwXhCu8sRunxjiUHyURWS0+dsW/aBPi06xiyYIdCLHI6jph9Axb4QoLIlb85eBI6zd2EAbGIg==",
-      "path": "aforge.math/2.2.5",
-      "hashPath": "aforge.math.2.2.5.nupkg.sha512"
-    },
-    "AForge.Video/2.2.5": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-XqzcOXtBUagEPRqg/00oayxlCPmxP4284SdM62mVotsNoD03fs19BrzdMBfhUOOYPyd0B/IXH7tEWnSDmc2gxA==",
-      "path": "aforge.video/2.2.5",
-      "hashPath": "aforge.video.2.2.5.nupkg.sha512"
-    },
-    "AForge.Vision/2.2.5": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-5V2+xqp+OPsZIDqsdKdiuC1Ey9oGiOpbVQHTOLkcHhhaVbBLJIwIs43ofdot5ThP8lk4EOj+OeLY8xolXIJ1FA==",
-      "path": "aforge.vision/2.2.5",
-      "hashPath": "aforge.vision.2.2.5.nupkg.sha512"
-    },
-    "Newtonsoft.Json/12.0.3": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
-      "path": "newtonsoft.json/12.0.3",
-      "hashPath": "newtonsoft.json.12.0.3.nupkg.sha512"
     }
   }
 }

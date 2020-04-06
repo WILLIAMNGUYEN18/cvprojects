@@ -5,6 +5,14 @@ using System.Text;
 
 namespace valorantcv
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Drawing;
+
+    using Emgu.CV;
+    using Emgu.CV.CvEnum;
+    using Emgu.CV.Structure;
+
     class ParseMP4
     {
 
@@ -22,6 +30,42 @@ namespace valorantcv
 
             return "";
         }
-        
+        public static void testCanny()
+        {
+            int cannyThresholdLow = 0;
+            int cannyThresholdHigh = 100;
+
+            //C:\valorantcv\outputFrames\frame - 00121.png
+            var image = new Image<Bgr, byte>("C:\\valorantcv\\outputFrames\\frame-00121.png");
+
+            var grayScaleImage = image.Convert<Gray, byte>();
+
+            //var blurredImage = grayScaleImage.SmoothGaussian(5, 5, 0, 0);
+            var cannyImage = grayScaleImage.Canny(cannyThresholdLow, cannyThresholdHigh);
+
+
+        }
+        /*
+            using (var image = new Image<Bgr, byte>("C:/Projects/DocumentDetection/document.jpg"))
+            using (var grayScaleImage = image.Convert<Gray, byte>())
+            using (var blurredImage = grayScaleImage.SmoothGaussian(5, 5, 0, 0))
+
+                 //
+        // Summary:
+        //     Find the edges on this image and marked them in the returned image.
+        //
+        // Parameters:
+        //   thresh:
+        //     The threshhold to find initial segments of strong edges
+        //
+        //   threshLinking:
+        //     The threshold used for edge Linking
+        //
+        // Returns:
+        //     The edges found by the Canny edge detector
+        [ExposableMethod(Exposable = true, Category = "Gradients, Edges")]
+        public Image<Gray, byte> Canny(double thresh, double threshLinking);
+         */
+
     }
 }
