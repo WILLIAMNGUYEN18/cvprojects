@@ -11,6 +11,15 @@
           "lib/netstandard2.0/Emgu.CV.World.NetStandard.dll": {}
         }
       },
+      "Emgu.CV.runtime.windows/4.2.0.3662": {
+        "type": "package",
+        "dependencies": {
+          "Emgu.CV": "[4.2.0.3662]"
+        },
+        "build": {
+          "build/Emgu.CV.runtime.windows.targets": {}
+        }
+      },
       "Microsoft.NETCore.App/2.1.0": {
         "type": "package",
         "dependencies": {
@@ -233,6 +242,39 @@
         "icon.png",
         "lib/netstandard2.0/Emgu.CV.World.NetStandard.dll",
         "lib/netstandard2.0/Emgu.CV.World.NetStandard.xml"
+      ]
+    },
+    "Emgu.CV.runtime.windows/4.2.0.3662": {
+      "sha512": "DT8v08/ZMW+ll7Lvlf2qci18XoffrZUfR1lrdTWhdxjtmFMdOmdclUgfR29R2Sj6vdxxvh+kOtmf4oCn/Rsu+Q==",
+      "type": "package",
+      "path": "emgu.cv.runtime.windows/4.2.0.3662",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Emgu.CV.License.txt",
+        "build/Emgu.CV.runtime.windows.targets",
+        "build/x64/concrt140.dll",
+        "build/x64/cvextern.dll",
+        "build/x64/msvcp140.dll",
+        "build/x64/msvcp140_1.dll",
+        "build/x64/msvcp140_2.dll",
+        "build/x64/msvcp140_codecvt_ids.dll",
+        "build/x64/opencv_videoio_ffmpeg420_64.dll",
+        "build/x64/vcruntime140.dll",
+        "build/x64/vcruntime140_1.dll",
+        "build/x86/concrt140.dll",
+        "build/x86/cvextern.dll",
+        "build/x86/msvcp140.dll",
+        "build/x86/msvcp140_1.dll",
+        "build/x86/msvcp140_2.dll",
+        "build/x86/msvcp140_codecvt_ids.dll",
+        "build/x86/opencv_videoio_ffmpeg420.dll",
+        "build/x86/vcruntime140.dll",
+        "emgu.cv.runtime.windows.4.2.0.3662.nupkg.sha512",
+        "emgu.cv.runtime.windows.nuspec",
+        "icon.png",
+        "lib/net461/Emgu.CV.UI.dll",
+        "lib/net461/Emgu.CV.UI.xml"
       ]
     },
     "Microsoft.NETCore.App/2.1.0": {
@@ -709,6 +751,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
       "Emgu.CV >= 4.2.0.3662",
+      "Emgu.CV.runtime.windows >= 4.2.0.3662",
       "Microsoft.NETCore.App >= 2.1.0"
     ]
   },
@@ -754,6 +797,10 @@
       "netcoreapp2.1": {
         "dependencies": {
           "Emgu.CV": {
+            "target": "Package",
+            "version": "[4.2.0.3662, )"
+          },
+          "Emgu.CV.runtime.windows": {
             "target": "Package",
             "version": "[4.2.0.3662, )"
           },

@@ -32,7 +32,7 @@ namespace valorantcv
         }
         public static void testCanny()
         {
-            int cannyThresholdLow = 0;
+            int cannyThresholdLow = 1;
             int cannyThresholdHigh = 100;
 
             //C:\valorantcv\outputFrames\frame - 00121.png
@@ -43,6 +43,16 @@ namespace valorantcv
             //var blurredImage = grayScaleImage.SmoothGaussian(5, 5, 0, 0);
             var cannyImage = grayScaleImage.Canny(cannyThresholdLow, cannyThresholdHigh);
 
+            cannyImage.Save("C:\\valorantcv\\testBaseCanny\\cannyframe.png");
+
+
+            var templateImage = new Image<Bgr, byte>("C:\\valorantcv\\templates\\spikeactive.png");
+
+            var templateGrayScaleImage = templateImage.Convert<Gray, byte>();
+
+            var templateCanny = templateGrayScaleImage.Canny(cannyThresholdLow, cannyThresholdHigh);
+
+            templateCanny.Save("C:\\valorantcv\\testBaseCanny\\cannytemplate.png");
 
         }
         /*
