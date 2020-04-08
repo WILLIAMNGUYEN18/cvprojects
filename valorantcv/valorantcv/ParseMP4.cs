@@ -32,10 +32,11 @@ namespace valorantcv
         }
         public static void testCanny()
         {
-            int cannyThresholdLow = 1;
-            int cannyThresholdHigh = 100;
+            int cannyThresholdLow = 20;
+            int cannyThresholdHigh = 90;
 
-            //C:\valorantcv\outputFrames\frame - 00121.png
+            //C:\valorantcv\outputFrames\frame - 00121.png template
+            //C:\valorantcv\outputFrames\frame
             var image = new Image<Bgr, byte>("C:\\valorantcv\\outputFrames\\frame-00121.png");
 
             var grayScaleImage = image.Convert<Gray, byte>();
@@ -54,6 +55,39 @@ namespace valorantcv
 
             templateCanny.Save("C:\\valorantcv\\testBaseCanny\\cannytemplate.png");
 
+
+            //next step is to make a smaller image from the gray scale of the relevant area
+            //
+
+            //910 x 10
+            //102 x 90
+
+            //so we want a slightly larger area of detection
+
+            Rectangle MatchingArea = new Rectangle(
+                (910),
+                (10),
+                (102),
+                (90)
+             );
+
+            //we need a bitmap source
+            //Image<Bgr, byte> 
+
+            //convert bitmap to 
+
+            grayScaleImage.ROI = MatchingArea;
+            Image<Gray, byte> imageROI = grayScaleImage.Copy();
+
+            Image<Gray, byte> cannyImageROI = imageROI.Canny(cannyThresholdLow, cannyThresholdHigh);
+
+            cannyImageROI.Save("C:\\valorantcv\\testBaseCanny\\cannyimageroi.png");
+
+            //values seem fine. Can get away with a lot it seems
+            //Actually, need to test with a shitty example.
+
+
+   
         }
         /*
             using (var image = new Image<Bgr, byte>("C:/Projects/DocumentDetection/document.jpg"))
