@@ -55,7 +55,6 @@ namespace valorantcv
 
             templateCanny.Save("C:\\valorantcv\\testBaseCanny\\cannytemplate.png");
 
-
             //next step is to make a smaller image from the gray scale of the relevant area
             //
 
@@ -64,11 +63,11 @@ namespace valorantcv
 
             //so we want a slightly larger area of detection
 
-            Rectangle MatchingArea = new Rectangle(
-                (910),
-                (10),
-                (102),
-                (90)
+            Rectangle interestregion = new Rectangle(
+                (900),
+                (0),
+                (112),
+                (100)
              );
 
             //we need a bitmap source
@@ -76,7 +75,7 @@ namespace valorantcv
 
             //convert bitmap to 
 
-            grayScaleImage.ROI = MatchingArea;
+            grayScaleImage.ROI = interestregion;
             Image<Gray, byte> imageROI = grayScaleImage.Copy();
 
             Image<Gray, byte> cannyImageROI = imageROI.Canny(cannyThresholdLow, cannyThresholdHigh);
@@ -85,9 +84,32 @@ namespace valorantcv
 
             //values seem fine. Can get away with a lot it seems
             //Actually, need to test with a shitty example.
+            Image<Gray, float> Score1 = cannyImageROI.MatchTemplate(templateCanny, Emgu.CV.CvEnum.TemplateMatchingType.Sqdiff);
+            Score1.Save("C:\\valorantcv\\testBaseCanny\\sqdifftest.png");
 
+            double min = 0, max = 0;
+            Point minP = new Point(0, 0), maxP = new Point(0, 0);
+            //Let's see what minmaxloc can do
+            CvInvoke.MinMaxLoc(Score1,ref min,ref max,ref minP, ref maxP);
+            Console.WriteLine(min);
+            Console.WriteLine(max);
+            Console.WriteLine(minP);
+            Console.WriteLine(maxP);
 
-   
+            Image<Gray, float> Score2 = cannyImageROI.MatchTemplate(templateCanny, Emgu.CV.CvEnum.TemplateMatchingType.SqdiffNormed);
+            Score2.Save("C:\\valorantcv\\testBaseCanny\\sqdiffnormtest.png");
+
+            Image<Gray, float> Score3 = cannyImageROI.MatchTemplate(templateCanny, Emgu.CV.CvEnum.TemplateMatchingType.Ccorr);
+            Score3.Save("C:\\valorantcv\\testBaseCanny\\ccorrtest.png");
+
+            Image<Gray, float> Score4 = cannyImageROI.MatchTemplate(templateCanny, Emgu.CV.CvEnum.TemplateMatchingType.CcorrNormed);
+            Score4.Save("C:\\valorantcv\\testBaseCanny\\ccornormtest.png");
+
+            Image<Gray, float> Score5 = cannyImageROI.MatchTemplate(templateCanny, Emgu.CV.CvEnum.TemplateMatchingType.Ccoeff);
+            Score5.Save("C:\\valorantcv\\testBaseCanny\\ccoefftest.png");
+
+            Image<Gray, float> Score6 = cannyImageROI.MatchTemplate(templateCanny, Emgu.CV.CvEnum.TemplateMatchingType.CcoeffNormed);
+            Score6.Save("C:\\valorantcv\\testBaseCanny\\ccoeffnormtest.png");
         }
         /*
             using (var image = new Image<Bgr, byte>("C:/Projects/DocumentDetection/document.jpg"))
