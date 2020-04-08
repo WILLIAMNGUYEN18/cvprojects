@@ -4,7 +4,8 @@ In addition to the (unreleased API), I was hoping to also get critical informati
 Once we can identify these elements, we will be able to attach them to a corresponding time, creating a time series data set.
 Long term, I will hopefully be able to congregate match data to create relevant player analytics (ability timings, spike plants, nade positions, etc)
 
-Previous similar work at Microsoft Research. https://www.linkedin.com/in/willnguyen18/
+Previous similar work at Microsoft Research. 
+HMU https://www.linkedin.com/in/willnguyen18/
 
 # Completed
 * Canny Test Images Up and Running
