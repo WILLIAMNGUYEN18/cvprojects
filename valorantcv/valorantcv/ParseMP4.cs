@@ -30,6 +30,74 @@ namespace valorantcv
 
             return "";
         }
+
+        //given frame image, template, region of interest, and outputfullPath
+        //
+        public static bool CannyMatchFrame(string framePath, string templatePath, Rectangle interestRegion, int thresh, string debugPath = "")
+        {
+            //Unsure how I want to deal with low and high threshold
+            //may not matter too much between different matches
+            int cannyThresholdLow = 20;
+            int cannyThresholdHigh = 90;
+
+            //Canny Image Creation
+            var frameImage = new Image<Bgr, byte>(framePath);
+            var grayScaleImage = frameImage.Convert<Gray, byte>();
+            grayScaleImage.ROI = interestRegion;
+            var grayScaleROI = grayScaleImage.Copy();
+            var cannyFrameROI = grayScaleROI.Canny(cannyThresholdLow, cannyThresholdHigh);
+
+            var templateImage = new Image<Bgr, byte>(templatePath);
+            var templateGrayScaleImage = templateImage.Convert<Gray, byte>();
+            var templateCanny = templateGrayScaleImage.Canny(cannyThresholdLow, cannyThresholdHigh);
+
+            //Template Matching
+            Image<Gray, float> Score = cannyFrameROI.MatchTemplate(templateCanny, Emgu.CV.CvEnum.TemplateMatchingType.SqdiffNormed);
+            double min = 0, max = 0;
+            Point minP = new Point(0, 0), maxP = new Point(0, 0);
+            CvInvoke.MinMaxLoc(Score, ref min, ref max, ref minP, ref maxP);
+            int legibleScore = (int)((1.0 - min) * 100);
+
+            if (debugPath.Length != 0)
+            {
+                int boxWidth = templateImage.Width;
+                int boxHeight = templateImage.Height;
+
+                //location is a combination of interestregion + minloc with size of template
+                Rectangle Box = new Rectangle(interestRegion.Left + minP.X, interestRegion.Top + minP.Y, boxWidth, boxHeight);
+
+                Console.WriteLine(framePath);
+                Console.WriteLine("Score: " + legibleScore);
+                Console.WriteLine("Threshold: " + thresh);
+                Console.WriteLine(Box.ToString());
+                Console.WriteLine("Template Match: " + (legibleScore > thresh));
+
+
+                //red box color
+                Bgr boxColor = new Bgr(0, 0, 255);
+
+                frameImage.Draw(Box, boxColor, 2);
+
+                //need to somehow save
+                frameImage.Save(debugPath);
+            }
+
+
+
+
+            //may need to dispose of everything
+            frameImage.Dispose();
+            grayScaleImage.Dispose();
+            grayScaleROI.Dispose();
+            cannyFrameROI.Dispose();
+            templateImage.Dispose();
+            templateGrayScaleImage.Dispose();
+            templateCanny.Dispose();
+
+            return legibleScore > thresh;
+
+        }
+
         public static void testCanny()
         {
             int cannyThresholdLow = 20;
