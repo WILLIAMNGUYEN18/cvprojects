@@ -82,8 +82,11 @@ namespace valorantcv
 
             cannyImageROI.Save("C:\\valorantcv\\testBaseCanny\\cannyimageroi.png");
 
+
+            //TODO: Refactor into a method to output info. Make this a debug mode type of thing probably (don't need most of this besides score)
             //values seem fine. Can get away with a lot it seems
             //Actually, need to test with a shitty example.
+            Console.WriteLine("sqdifftest.png");
             Image<Gray, float> Score1 = cannyImageROI.MatchTemplate(templateCanny, Emgu.CV.CvEnum.TemplateMatchingType.Sqdiff);
             Score1.Save("C:\\valorantcv\\testBaseCanny\\sqdifftest.png");
 
@@ -92,13 +95,29 @@ namespace valorantcv
             //Let's see what minmaxloc can do
             CvInvoke.MinMaxLoc(Score1,ref min,ref max,ref minP, ref maxP);
             Console.WriteLine(min);
+            //showing x = 10, y = 10, which matches our shift in template ROI.
             Console.WriteLine(max);
             Console.WriteLine(minP);
             Console.WriteLine(maxP);
 
+            // for TM_SQDIFF && TM_SQDIFF_NORMED, need to set to minLoc
+            // rest are maxLoc
+            // Unsure what output images are
+
+            //score values are normalized between 1 and 0 (lowest being best). I think I can stick with this one
+            Console.WriteLine("sqdiffnormtest.png");
             Image<Gray, float> Score2 = cannyImageROI.MatchTemplate(templateCanny, Emgu.CV.CvEnum.TemplateMatchingType.SqdiffNormed);
             Score2.Save("C:\\valorantcv\\testBaseCanny\\sqdiffnormtest.png");
+            CvInvoke.MinMaxLoc(Score2, ref min, ref max, ref minP, ref maxP);
+            Console.WriteLine(min);
+            //showing x = 10, y = 10, which matches our shift in template ROI.
+            Console.WriteLine(max);
+            Console.WriteLine(minP);
+            Console.WriteLine(maxP);
 
+
+            //TODO: Test these other methods
+            //cross correlation
             Image<Gray, float> Score3 = cannyImageROI.MatchTemplate(templateCanny, Emgu.CV.CvEnum.TemplateMatchingType.Ccorr);
             Score3.Save("C:\\valorantcv\\testBaseCanny\\ccorrtest.png");
 
@@ -110,7 +129,37 @@ namespace valorantcv
 
             Image<Gray, float> Score6 = cannyImageROI.MatchTemplate(templateCanny, Emgu.CV.CvEnum.TemplateMatchingType.CcoeffNormed);
             Score6.Save("C:\\valorantcv\\testBaseCanny\\ccoeffnormtest.png");
+
+
+
+            //let's put out an image with the box itself
+            //we have the coords of min location and min location score
+            //we also have the size of the interest region
+            //we have original image
+            //Let's draw a box over it
+            int boxWidth = templateImage.Width;
+            int boxHeight = templateImage.Height;
+
+            //location is a combination of interestregion + minloc with size of template
+            Rectangle Box = new Rectangle(interestregion.Left + minP.X, interestregion.Top + minP.Y, boxWidth, boxHeight);
+
+
+            Image<Bgr, byte> boxFrame = image.Copy();
+
+            //redbox
+            Bgr boxColor = new Bgr(0,0,255);
+
+            boxFrame.Draw(Box, boxColor, 2);
+
+            boxFrame.Save("C:\\valorantcv\\testBaseCanny\\boundBox.png");
+
         }
+
+
+        //
+
+
+
         /*
             using (var image = new Image<Bgr, byte>("C:/Projects/DocumentDetection/document.jpg"))
             using (var grayScaleImage = image.Convert<Gray, byte>())
