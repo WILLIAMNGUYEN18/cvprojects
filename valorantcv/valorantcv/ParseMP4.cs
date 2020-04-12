@@ -37,8 +37,8 @@ namespace valorantcv
         {
             //Unsure how I want to deal with low and high threshold
             //may not matter too much between different matches
-            int cannyThresholdLow = 20;
-            int cannyThresholdHigh = 90;
+            int cannyThresholdLow = 0;
+            int cannyThresholdHigh = 125;
 
             //Canny Image Creation
             var frameImage = new Image<Bgr, byte>(framePath);
@@ -52,11 +52,12 @@ namespace valorantcv
             var templateCanny = templateGrayScaleImage.Canny(cannyThresholdLow, cannyThresholdHigh);
 
             //Template Matching
-            Image<Gray, float> Score = cannyFrameROI.MatchTemplate(templateCanny, Emgu.CV.CvEnum.TemplateMatchingType.SqdiffNormed);
+            Image<Gray, float> Score = cannyFrameROI.MatchTemplate(templateCanny, Emgu.CV.CvEnum.TemplateMatchingType.CcorrNormed);
             double min = 0, max = 0;
             Point minP = new Point(0, 0), maxP = new Point(0, 0);
             CvInvoke.MinMaxLoc(Score, ref min, ref max, ref minP, ref maxP);
-            int legibleScore = (int)((1.0 - min) * 100);
+            //int legibleScore = (int)((1.0 - min) * 100);
+            int legibleScore = (int)(max * 100);
 
             if (debugPath.Length != 0)
             {
@@ -71,7 +72,8 @@ namespace valorantcv
                 Console.WriteLine("Threshold: " + thresh);
                 Console.WriteLine(Box.ToString());
                 Console.WriteLine("Template Match: " + (legibleScore > thresh));
-
+                //templateCanny.Save(deb);
+                cannyFrameROI.Save(debugPath);
 
                 //red box color
                 Bgr boxColor = new Bgr(0, 0, 255);
@@ -79,7 +81,7 @@ namespace valorantcv
                 frameImage.Draw(Box, boxColor, 2);
 
                 //need to somehow save
-                frameImage.Save(debugPath);
+                //frameImage.Save(debugPath);
             }
 
 
