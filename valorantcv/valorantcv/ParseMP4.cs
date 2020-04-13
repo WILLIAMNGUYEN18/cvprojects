@@ -37,14 +37,14 @@ namespace valorantcv
         {
             //Unsure how I want to deal with low and high threshold
             //may not matter too much between different matches
-            int cannyThresholdLow = 0;
-            int cannyThresholdHigh = 125;
+            int cannyThresholdLow = 20;
+            int cannyThresholdHigh = 60;
 
             //Canny Image Creation
             var frameImage = new Image<Bgr, byte>(framePath);
             var grayScaleImage = frameImage.Convert<Gray, byte>();
             grayScaleImage.ROI = interestRegion;
-            var grayScaleROI = grayScaleImage.Copy();
+            var grayScaleROI = grayScaleImage.Copy().SmoothGaussian(9,9,0,0);
             var cannyFrameROI = grayScaleROI.Canny(cannyThresholdLow, cannyThresholdHigh);
 
             var templateImage = new Image<Bgr, byte>(templatePath);
