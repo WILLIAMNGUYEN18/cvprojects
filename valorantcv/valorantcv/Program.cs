@@ -31,19 +31,19 @@ namespace valorantcv
             //output
             string spikeOriginalFrame = "C:\\valorantcv\\outputFrames\\frame-00121.png";
             string spikeOriginalOutput = spikeTestDefault + parseFrameNumber(spikeOriginalFrame) + ".png";
-            ParseMP4.CannyMatchFrame(spikeOriginalFrame, spikeTemplate,spikeRect, 50, spikeOriginalOutput);
+            ParseMP4.CannyMatchFrame(spikeOriginalFrame, spikeTemplate,spikeRect, 20, spikeOriginalOutput);
 
             string spikeRedCountdownFrame = "C:\\valorantcv\\outputFrames\\frame-00052.png";
             string spikeRedOutput = spikeTestDefault + parseFrameNumber(spikeRedCountdownFrame) + ".png";
-            ParseMP4.CannyMatchFrame(spikeRedCountdownFrame,spikeTemplate, spikeRect, 50, spikeRedOutput);
+            ParseMP4.CannyMatchFrame(spikeRedCountdownFrame,spikeTemplate, spikeRect, 20, spikeRedOutput);
 
             string spikeDarkFrame = "C:\\valorantcv\\outputFrames\\frame-00124.png";
             string spikeDarkOutput = spikeTestDefault + parseFrameNumber(spikeDarkFrame) + ".png";
-            ParseMP4.CannyMatchFrame(spikeDarkFrame, spikeTemplate, spikeRect, 50, spikeDarkOutput);
+            ParseMP4.CannyMatchFrame(spikeDarkFrame, spikeTemplate, spikeRect, 20, spikeDarkOutput);
 
             string spikeMixedFrame = "C:\\valorantcv\\outputFrames\\frame-00127.png";
             string spikeMixedOutput = spikeTestDefault + parseFrameNumber(spikeMixedFrame) + ".png";
-            ParseMP4.CannyMatchFrame(spikeMixedFrame, spikeTemplate, spikeRect, 50, spikeMixedOutput);
+            ParseMP4.CannyMatchFrame(spikeMixedFrame, spikeTemplate, spikeRect, 20, spikeMixedOutput);
 
 
             Console.WriteLine("Canny Match Frame Test Complete!");

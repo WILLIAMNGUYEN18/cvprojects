@@ -44,11 +44,11 @@ namespace valorantcv
             var frameImage = new Image<Bgr, byte>(framePath);
             var grayScaleImage = frameImage.Convert<Gray, byte>();
             grayScaleImage.ROI = interestRegion;
-            var grayScaleROI = grayScaleImage.Copy().SmoothGaussian(9,9,0,0);
+            var grayScaleROI = grayScaleImage.Copy().SmoothGaussian(7,7,0,0);
             var cannyFrameROI = grayScaleROI.Canny(cannyThresholdLow, cannyThresholdHigh);
 
             var templateImage = new Image<Bgr, byte>(templatePath);
-            var templateGrayScaleImage = templateImage.Convert<Gray, byte>();
+            var templateGrayScaleImage = templateImage.Convert<Gray, byte>().SmoothGaussian(7,7,0,0);
             var templateCanny = templateGrayScaleImage.Canny(cannyThresholdLow, cannyThresholdHigh);
 
             //Template Matching
@@ -74,6 +74,7 @@ namespace valorantcv
                 Console.WriteLine("Template Match: " + (legibleScore > thresh));
                 //templateCanny.Save(deb);
                 cannyFrameROI.Save(debugPath);
+                templateCanny.Save("C:\\valorantcv\\testBaseCanny\\cannytemplate.png");
 
                 //red box color
                 Bgr boxColor = new Bgr(0, 0, 255);
@@ -103,7 +104,7 @@ namespace valorantcv
         public static void testCanny()
         {
             int cannyThresholdLow = 20;
-            int cannyThresholdHigh = 90;
+            int cannyThresholdHigh = 60;
 
             //C:\valorantcv\outputFrames\frame - 00121.png template
             //C:\valorantcv\outputFrames\frame
