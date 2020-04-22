@@ -12,8 +12,14 @@ namespace valorantcv
     {
         static void Main(string[] args)
         {
+            //initialCannyTest();
+            AnalyticsPipeline.RunMP4Pipeline("C:\\valorantcv\\outputFrames");
+        }
+
+        static void initialCannyTest()
+        {
             Console.WriteLine("Basic Canny Test Starting...");
-            ParseMP4.testCanny();
+            AnalyticsMethods.testCanny();
             Console.WriteLine("Basic Canny Test Complete!");
 
             Console.WriteLine("Canny Match Frame Test Starting...");
@@ -31,25 +37,27 @@ namespace valorantcv
             //output
             string spikeOriginalFrame = "C:\\valorantcv\\outputFrames\\frame-00121.png";
             string spikeOriginalOutput = spikeTestDefault + parseFrameNumber(spikeOriginalFrame) + ".png";
-            ParseMP4.CannyMatchFrame(spikeOriginalFrame, spikeTemplate,spikeRect, 20, spikeOriginalOutput);
+            AnalyticsMethods.CannyMatchFrame(spikeOriginalFrame, spikeTemplate, spikeRect, 20, spikeOriginalOutput);
 
             string spikeRedCountdownFrame = "C:\\valorantcv\\outputFrames\\frame-00052.png";
             string spikeRedOutput = spikeTestDefault + parseFrameNumber(spikeRedCountdownFrame) + ".png";
-            ParseMP4.CannyMatchFrame(spikeRedCountdownFrame,spikeTemplate, spikeRect, 20, spikeRedOutput);
+            AnalyticsMethods.CannyMatchFrame(spikeRedCountdownFrame, spikeTemplate, spikeRect, 20, spikeRedOutput);
 
             string spikeDarkFrame = "C:\\valorantcv\\outputFrames\\frame-00124.png";
             string spikeDarkOutput = spikeTestDefault + parseFrameNumber(spikeDarkFrame) + ".png";
-            ParseMP4.CannyMatchFrame(spikeDarkFrame, spikeTemplate, spikeRect, 20, spikeDarkOutput);
+            AnalyticsMethods.CannyMatchFrame(spikeDarkFrame, spikeTemplate, spikeRect, 20, spikeDarkOutput);
 
             string spikeMixedFrame = "C:\\valorantcv\\outputFrames\\frame-00127.png";
             string spikeMixedOutput = spikeTestDefault + parseFrameNumber(spikeMixedFrame) + ".png";
-            ParseMP4.CannyMatchFrame(spikeMixedFrame, spikeTemplate, spikeRect, 20, spikeMixedOutput);
+            AnalyticsMethods.CannyMatchFrame(spikeMixedFrame, spikeTemplate, spikeRect, 20, spikeMixedOutput);
 
 
             Console.WriteLine("Canny Match Frame Test Complete!");
             //Console.WriteLine(parseFrameNumber(spikeOriginalFrame));
             //Console.WriteLine(parseFrameNumber(spikeRedCountdownFrame));
         }
+
+
 
         static string parseFrameNumber(string framePath) 
         {

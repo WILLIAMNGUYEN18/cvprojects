@@ -44,3 +44,9 @@ HMU https://www.linkedin.com/in/willnguyen18/
 
 6. Incorporating Stream and Youtube Video Parsing
 7. Data Warehousing
+
+
+
+Random Thoughts:
+*Could add some sort of crowdsourcing method for templating/picking objects to identify?
+*Allow users to choose which objects they want to recognize. This set of template classes will be looped through and run
