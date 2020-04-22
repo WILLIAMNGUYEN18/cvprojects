@@ -17,6 +17,11 @@ namespace valorantcv
 
         public static void RunMP4Pipeline(string fileName)
         {
+
+            //Creating Timeline
+            List<TimelineInstance> result = new List<TimelineInstance>();
+
+
             //assumewe are doing 
             //TODO: incorporate MP4 parsing with FFMPEG
 
@@ -39,12 +44,7 @@ namespace valorantcv
                 //in future could choose the template types as a list/set as a foreach
                 //for relevant templatetype
 
-                foreach (TemplateClass T in templates)
-                {
-                    Console.WriteLine(files);
-                    //
-                    //Need an additional processframe logic method
-                }
+                result.Add(processFrame(files, templates));
 
             }
 
@@ -54,6 +54,23 @@ namespace valorantcv
 
 
         }
+
+        static TimelineInstance processFrame(string file, List<TemplateClass> tempClasses) 
+        {
+            foreach (TemplateClass T in tempClasses)
+            {
+                //
+                Console.WriteLine(file);
+                //
+                //Need an additional processframe logic method
+
+                //is there a cleaner, more programmatic way of handling all
+                //the different template classes cases and their
+                //appropriate response to the 
+            }
+            return null;
+        }
+
 
 
 

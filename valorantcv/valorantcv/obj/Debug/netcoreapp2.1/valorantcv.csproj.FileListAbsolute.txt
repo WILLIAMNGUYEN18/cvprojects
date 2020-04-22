@@ -20,9 +20,10 @@ C:\valorantcv\valorantcv\valorantcv\bin\Debug\netcoreapp2.1\valorantcv.runtimeco
 C:\valorantcv\valorantcv\valorantcv\bin\Debug\netcoreapp2.1\valorantcv.runtimeconfig.dev.json
 C:\valorantcv\valorantcv\valorantcv\bin\Debug\netcoreapp2.1\valorantcv.dll
 C:\valorantcv\valorantcv\valorantcv\bin\Debug\netcoreapp2.1\valorantcv.pdb
+C:\valorantcv\valorantcv\valorantcv\obj\Debug\netcoreapp2.1\valorantcv.csprojAssemblyReference.cache
 C:\valorantcv\valorantcv\valorantcv\obj\Debug\netcoreapp2.1\valorantcv.csproj.CoreCompileInputs.cache
 C:\valorantcv\valorantcv\valorantcv\obj\Debug\netcoreapp2.1\valorantcv.AssemblyInfoInputs.cache
 C:\valorantcv\valorantcv\valorantcv\obj\Debug\netcoreapp2.1\valorantcv.AssemblyInfo.cs
 C:\valorantcv\valorantcv\valorantcv\obj\Debug\netcoreapp2.1\valorantcv.dll
 C:\valorantcv\valorantcv\valorantcv\obj\Debug\netcoreapp2.1\valorantcv.pdb
-C:\valorantcv\valorantcv\valorantcv\obj\Debug\netcoreapp2.1\valorantcv.csprojAssemblyReference.cache
+C:\valorantcv\valorantcv\valorantcv\obj\Debug\netcoreapp2.1\valorantcv.genruntimeconfig.cache
