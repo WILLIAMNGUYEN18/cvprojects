@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": ""
+    "signature": "0b83c14e94215360c39fbc0bf8baf07960423f0a"
   },
   "compilationOptions": {},
   "targets": {
@@ -9,7 +9,8 @@
       "valorantcv/1.0.0": {
         "dependencies": {
           "Emgu.CV": "4.2.0.3662",
-          "Emgu.CV.runtime.windows": "4.2.0.3662"
+          "Emgu.CV.runtime.windows": "4.2.0.3662",
+          "Newtonsoft.Json": "12.0.3"
         },
         "runtime": {
           "valorantcv.dll": {}
@@ -26,6 +27,14 @@
       "Emgu.CV.runtime.windows/4.2.0.3662": {
         "dependencies": {
           "Emgu.CV": "4.2.0.3662"
+        }
+      },
+      "Newtonsoft.Json/12.0.3": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "12.0.0.0",
+            "fileVersion": "12.0.3.23909"
+          }
         }
       }
     }
@@ -49,6 +58,13 @@
       "sha512": "sha512-DT8v08/ZMW+ll7Lvlf2qci18XoffrZUfR1lrdTWhdxjtmFMdOmdclUgfR29R2Sj6vdxxvh+kOtmf4oCn/Rsu+Q==",
       "path": "emgu.cv.runtime.windows/4.2.0.3662",
       "hashPath": "emgu.cv.runtime.windows.4.2.0.3662.nupkg.sha512"
+    },
+    "Newtonsoft.Json/12.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
+      "path": "newtonsoft.json/12.0.3",
+      "hashPath": "newtonsoft.json.12.0.3.nupkg.sha512"
     }
   }
 }

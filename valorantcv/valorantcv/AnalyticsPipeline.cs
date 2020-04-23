@@ -9,6 +9,7 @@ using Emgu.CV;
 using Emgu.CV.CvEnum;
 using Emgu.CV.Structure;
 using System.IO;
+using Newtonsoft.Json;
 
 namespace valorantcv
 {
@@ -17,10 +18,8 @@ namespace valorantcv
 
         public static void RunMP4Pipeline(string fileName)
         {
-
             //Creating Timeline
             List<TimelineInstance> result = new List<TimelineInstance>();
-
 
             //assumewe are doing 
             //TODO: incorporate MP4 parsing with FFMPEG
@@ -48,27 +47,49 @@ namespace valorantcv
 
             }
 
-
+            //output result as a JSON
+            //JsonConvert.Deserialize
+            File.WriteAllText("C:\\valorantcv\\testBaseCanny\\testOutput.json", JsonConvert.SerializeObject(result));
 
 
 
 
         }
 
+
+
+
+        //is there a cleaner, more programmatic way of handling all
+        //the different template classes cases and their
+        //appropriate response to the 
+
+
+        //Need to include templates so we can process 
+        //all the changes we want for each timeline instance
+
         static TimelineInstance processFrame(string file, List<TemplateClass> tempClasses) 
         {
+            Console.WriteLine(file);
+            TimelineInstance result = new TimelineInstance();
+            string frame = parseFrameNumber(file);
+            result.frame = Int32.Parse(frame);
             foreach (TemplateClass T in tempClasses)
             {
-                //
-                Console.WriteLine(file);
-                //
+                result.spike = AnalyticsMethods.CannyMatchFrame(file,T.templatePath, T.interestRegion, T.threshold);
                 //Need an additional processframe logic method
 
-                //is there a cleaner, more programmatic way of handling all
-                //the different template classes cases and their
-                //appropriate response to the 
             }
-            return null;
+            return result;
+        }
+
+        static string parseFrameNumber(string framePath)
+        {
+            int parsingFrame = framePath.LastIndexOf('-');
+            string frame = framePath.Substring(parsingFrame + 1);
+            int trimPNG = frame.LastIndexOf('.');
+            frame = frame.Remove(trimPNG);
+
+            return frame;
         }
 
 

@@ -26,4 +26,3 @@ C:\valorantcv\valorantcv\valorantcv\obj\Debug\netcoreapp2.1\valorantcv.AssemblyI
 C:\valorantcv\valorantcv\valorantcv\obj\Debug\netcoreapp2.1\valorantcv.AssemblyInfo.cs
 C:\valorantcv\valorantcv\valorantcv\obj\Debug\netcoreapp2.1\valorantcv.dll
 C:\valorantcv\valorantcv\valorantcv\obj\Debug\netcoreapp2.1\valorantcv.pdb
-C:\valorantcv\valorantcv\valorantcv\obj\Debug\netcoreapp2.1\valorantcv.genruntimeconfig.cache

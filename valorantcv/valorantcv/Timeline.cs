@@ -7,8 +7,8 @@ namespace valorantcv
     
     public class TimelineInstance
     {
-        string time;
-        int frame;
-        bool spike;
+        public string time { get; set; }
+        public int frame { get; set; }
+        public bool spike { get; set; }
     }
 }
