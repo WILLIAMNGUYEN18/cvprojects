@@ -17,6 +17,7 @@ HMU https://www.linkedin.com/in/willnguyen18/
 * Canny Test Images Up and Running
 * Template Matching Test for Template Image Complete
 * Canny Threshold with Smooth Gaussian
+* Outputting basic frame information with spike detection in a json file
 
 # RoadMap:
 
@@ -31,12 +32,14 @@ HMU https://www.linkedin.com/in/willnguyen18/
     *Creating Processing Logic for entire Folder
     *Creating a class to stitch individual images in a folder into a sequence
     *Storing that data in JSON format
+    
 
 3. Switch to SIFT for Symbol Matching
 
 4. Refactoring to decouple frame parsing, image identification, and template provision
 
     *A lot of parameters currently that need to be passed around. Could put them all into a class with class instances
+    *Specialize searches with newtonjsoft so we can filter for elements we care about at the moment?
     *Threshold Evaluation Method (probably a ROC curve with a series of test images?)
 5. Parsing Nade/Ability Direction and method
     
@@ -47,6 +50,7 @@ HMU https://www.linkedin.com/in/willnguyen18/
 
 
 
-Random Thoughts:
+#Random Thoughts:
 *Could add some sort of crowdsourcing method for templating/picking objects to identify?
 *Allow users to choose which objects they want to recognize. This set of template classes will be looped through and run
+*Potentially a method of parsing CSVs?

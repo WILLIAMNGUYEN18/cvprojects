@@ -13,7 +13,8 @@ namespace valorantcv
         static void Main(string[] args)
         {
             //initialCannyTest();
-            AnalyticsPipeline.RunMP4Pipeline("C:\\valorantcv\\outputFrames");
+            //AnalyticsPipeline.RunMP4Pipeline("C:\\valorantcv\\outputFrames");
+            Insights.visualizeTimeline("C:\\valorantcv\\testBaseCanny\\testOutput.json");
         }
 
         static void initialCannyTest()
