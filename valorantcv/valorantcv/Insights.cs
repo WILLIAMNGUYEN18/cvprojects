@@ -44,6 +44,8 @@ namespace valorantcv
                 );
             Slate.Draw(outline, new Bgr(0,0,0),2);
 
+            Slate.Draw(new Rectangle(51, 76, 1818, 48), new Bgr(Color.LightGray), -1);
+
             //scale image by list length;
             int scale = Timeline.Count;
 
@@ -57,26 +59,22 @@ namespace valorantcv
                 if (time.spike)
                 {
                     timelineColor = new Bgr(Color.Red);
+                    double instanceSize = (outline.Width / scale);
+                    //int currX = count * (int)Math.Ceiling(instanceSize) + count;
+                    int currX = count * (int)instanceSize + count;
+
+                    Console.WriteLine(currX);
+                    Console.WriteLine(instanceSize);
+                    Console.WriteLine(currX + instanceSize);
+                    Console.WriteLine();
+
+                    // starting position is 50
+                    // increment is count * imgSize/scale
+                    // If thickness is less than 1, the rectangle is filled up
+                    Rectangle currentRec = new Rectangle(51 + currX, 77, (int)instanceSize, 46);
+                    Slate.Draw(currentRec, timelineColor, -1);
                 }
-                else
-                {
-                    timelineColor = new Bgr(Color.LightGray);
-                }
 
-                double instanceSize = (outline.Width / scale);
-                //int currX = count * (int)Math.Ceiling(instanceSize) + count;
-                int currX = count * (int)instanceSize + count;
-
-                Console.WriteLine(currX);
-                Console.WriteLine(instanceSize);
-                Console.WriteLine(currX + instanceSize);
-                Console.WriteLine();
-
-                // starting position is 50
-                // increment is count * imgSize/scale
-                // If thickness is less than 1, the rectangle is filled up
-                Rectangle currentRec = new Rectangle(51 + currX, 77, (int)instanceSize, 46); 
-                Slate.Draw(currentRec,timelineColor,-1);
                 count++;
 
             }
